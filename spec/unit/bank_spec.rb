@@ -15,7 +15,17 @@ describe Bank do
 
   describe '#withdraw' do
     it 'should throw an error when withdrawing from a bank with 0 balance' do
-      expect { bank.withdraw(100) }.to raise_error "Insufficient balance"
+      expect { bank.withdraw(100) }.to raise_error("Insufficient balance")
+    end
+
+    it 'should withdraw £100' do
+      bank.deposit(100)
+      expect(bank.withdraw(100)).to eq("Successfully withdrawn £100")
+    end
+
+    it 'should withdraw £200' do
+      bank.deposit(500)
+      expect(bank.withdraw(200)).to eq("Successfully withdrawn £200")
     end
   end
 

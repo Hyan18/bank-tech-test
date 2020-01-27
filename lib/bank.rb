@@ -4,11 +4,14 @@ class Bank
   end
 
   def deposit(amount)
+    @balance += amount
     "Successfully deposited £#{amount}"
   end
 
   def withdraw(amount)
     raise BankError.new("Insufficient balance") if @balance < amount
+
+    "Successfully withdrawn £#{amount}"
   end
 
 end
