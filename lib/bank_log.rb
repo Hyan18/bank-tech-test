@@ -24,9 +24,9 @@ class BankLog
   def amounts(type, amount)
     case type
     when "deposit"
-      return amount, 0
+      return amount, nil
     when "withdrawal"
-      return 0, amount
+      return nil, amount
     end
   end
 

@@ -11,7 +11,7 @@ describe BankLog do
       expect(transaction_class).to receive(:new).with(
         date: "10/01/2012",
         credit: 100,
-        debit: 0,
+        debit: nil,
         balance: 100
       )
 
@@ -27,7 +27,7 @@ describe BankLog do
     it 'should create a withdrawal transaction and store it' do
       expect(transaction_class).to receive(:new).with(
         date: "10/01/2012",
-        credit: 0,
+        credit: nil,
         debit: 1000,
         balance: 1000
       )

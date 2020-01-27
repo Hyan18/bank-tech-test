@@ -48,3 +48,4 @@ I would like to able to see my account statement
 
 Features needed are: deposit, withdraw, print (bank statement)
 So I would want a Bank class which deals with the balance (deposit and withdrawal), which interacts with a BankLog class that archives all transactions which would interact with a Transaction class that holds information about each transaction.
+I would also want a statement class that deals with formatting the statement
