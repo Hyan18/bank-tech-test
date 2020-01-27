@@ -24,6 +24,26 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
+# User Stories
+
+```
+As a client
+So I can save money
+I would like to be able to deposit money into my account
+```
+
+```
+As a client
+So I can spend money
+I would like to able to withdraw money from my account
+```
+
+```
+As a client
+So I can keep track of my banking habits
+I would like to able to see my account statement
+```
+
 # Approach
 
 Features needed are: deposit, withdraw, print (bank statement)
