@@ -1,7 +1,7 @@
 class Bank
 
   def deposit(amount)
-    "Successfully deposited £100"
+    "Successfully deposited £#{amount}"
   end
 
 end
