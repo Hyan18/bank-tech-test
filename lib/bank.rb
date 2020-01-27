@@ -6,18 +6,19 @@ class Bank
     @bank_log = bank_log
   end
 
-  def deposit(amount)
+  def deposit(amount, date = Time.now.strftime("%d/%m/%Y"))
     @balance += amount
 
-    @bank_log.add
+    @bank_log.add(type: "deposit", amount: amount, balance: @balance, date: date)
     "Successfully deposited £#{amount}"
   end
 
-  def withdraw(amount)
+  def withdraw(amount, date = Time.now.strftime("%d/%m/%Y"))
     raise BankError.new("Insufficient balance") if @balance < amount
 
     @balance -= amount
 
+    @bank_log.add(type: "withdrawal", amount: amount, balance: @balance, date: date)
     "Successfully withdrawn £#{amount}"
   end
 

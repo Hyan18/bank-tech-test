@@ -15,8 +15,13 @@ describe Bank do
     end
 
     it 'should create an entry in the bank log' do
-      expect(bank_log).to receive(:add)
-      bank.deposit(100)
+      expect(bank_log).to receive(:add).with(
+        type: "deposit",
+        amount: 100,
+        balance: 100,
+        date: "10/01/2012"
+      )
+      bank.deposit(100, "10/01/2012")
     end
   end
 
@@ -40,6 +45,17 @@ describe Bank do
 
     it 'should raise an error when withdrawing £100 from a bank with 0 balance' do
       expect { bank.withdraw(100) }.to raise_error("Insufficient balance")
+    end
+
+    it 'should create an entry in the bank log' do
+      bank.deposit(2000)
+      expect(bank_log).to receive(:add).with(
+        type: "withdrawal",
+        amount: 1000,
+        balance: 1000,
+        date: "10/01/2012"
+      )
+      bank.withdraw(1000, "10/01/2012")
     end
 
   end
