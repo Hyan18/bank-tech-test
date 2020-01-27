@@ -16,7 +16,7 @@ describe Bank do
 
     it 'should create an entry in the bank log' do
       expect(bank_log).to receive(:add).with(
-        type: "deposit",
+        type: :deposit,
         amount: 100,
         balance: 100,
         date: "10/01/2012"
@@ -50,7 +50,7 @@ describe Bank do
     it 'should create an entry in the bank log' do
       bank.deposit(2000)
       expect(bank_log).to receive(:add).with(
-        type: "withdrawal",
+        type: :withdrawal,
         amount: 1000,
         balance: 1000,
         date: "10/01/2012"

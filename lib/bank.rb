@@ -9,7 +9,7 @@ class Bank
   def deposit(amount, date = Time.now.strftime("%d/%m/%Y"))
     @balance += amount
 
-    @bank_log.add(type: "deposit", amount: amount, balance: @balance, date: date)
+    @bank_log.add(type: :deposit, amount: amount, balance: @balance, date: date)
     "Successfully deposited £#{amount}"
   end
 
@@ -18,7 +18,7 @@ class Bank
 
     @balance -= amount
 
-    @bank_log.add(type: "withdrawal", amount: amount, balance: @balance, date: date)
+    @bank_log.add(type: :withdrawal, amount: amount, balance: @balance, date: date)
     "Successfully withdrawn £#{amount}"
   end
 

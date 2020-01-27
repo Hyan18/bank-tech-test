@@ -16,7 +16,7 @@ describe BankLog do
       )
 
       bank_log.add(
-        type: "deposit",
+        type: :deposit,
         amount: 100,
         balance: 100,
         date: "10/01/2012"
@@ -33,7 +33,7 @@ describe BankLog do
       )
 
       bank_log.add(
-        type: "withdrawal",
+        type: :withdrawal,
         amount: 1000,
         balance: 1000,
         date: "10/01/2012"
