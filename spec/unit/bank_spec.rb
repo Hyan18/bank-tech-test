@@ -1,7 +1,9 @@
 require 'bank'
 
 describe Bank do
-  subject(:bank) { described_class.new }
+  let(:bank_log) { double :bank_log, add: nil }
+
+  subject(:bank) { described_class.new(bank_log) }
 
   describe '#deposit' do
     it 'should deposit £100 into the bank' do
@@ -10,6 +12,11 @@ describe Bank do
 
     it 'should deposit £200 into the bank' do
       expect(bank.deposit(200)).to eq("Successfully deposited £200")
+    end
+
+    it 'should create an entry in the bank log' do
+      expect(bank_log).to receive(:add)
+      bank.deposit(100)
     end
   end
 
