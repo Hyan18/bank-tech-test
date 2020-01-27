@@ -11,6 +11,8 @@ class Bank
   def withdraw(amount)
     raise BankError.new("Insufficient balance") if @balance < amount
 
+    @balance -= amount
+
     "Successfully withdrawn £#{amount}"
   end
 

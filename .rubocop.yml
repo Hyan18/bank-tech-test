@@ -47,7 +47,8 @@ Metrics/LineLength:
 #     - 'spec/**/*'
 #     - 'test/**/*'
 
-# Metrics/BlockLength:
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
 #   Exclude:
 #     - 'spec/**/*'
 #     - 'test/**/*'
