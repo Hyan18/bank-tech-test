@@ -1,9 +1,15 @@
 require 'statement'
 
 describe Statement do
-  let(:transaction_1) { double :transaction, date: "10/01/2012", credit: 1000, debit: nil, balance: 1000 }
-  let(:transaction_2) { double :transaction, date: "13/01/2012", credit: 2000, debit: nil, balance: 3000 }
-  let(:transaction_3) { double :transaction, date: "14/01/2012", credit: nil, debit: 500, balance: 2500 }
+  let(:transaction_1) { 
+    double :transaction, date: "10/01/2012", credit: 1000, debit: nil, balance: 1000
+  }
+  let(:transaction_2) {
+    double :transaction, date: "13/01/2012", credit: 2000, debit: nil, balance: 3000
+  }
+  let(:transaction_3) {
+    double :transaction, date: "14/01/2012", credit: nil, debit: 500, balance: 2500
+  }
   let(:bank_log) { double :bank_log, history: [transaction_1, transaction_2, transaction_3] }
   
   subject(:statement) { described_class.new(bank_log) }
