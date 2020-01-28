@@ -1,4 +1,5 @@
 require_relative 'bank_log'
+require_relative 'statement'
 
 class Bank
   def initialize(bank_log = BankLog.new)
@@ -20,6 +21,10 @@ class Bank
 
     @bank_log.add(type: :withdrawal, amount: amount, balance: @balance, date: date)
     "Successfully withdrawn £#{amount}"
+  end
+
+  def print_statement(statement_class = Statement)
+    statement_class.new(@bank_log).print
   end
 
 end

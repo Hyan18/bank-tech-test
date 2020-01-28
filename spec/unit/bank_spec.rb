@@ -2,6 +2,8 @@ require 'bank'
 
 describe Bank do
   let(:bank_log) { double :bank_log, add: nil }
+  let(:statement) { double :statement, print: nil }
+  let(:statement_class) { double :statement_class, new: statement }
 
   subject(:bank) { described_class.new(bank_log) }
 
@@ -56,6 +58,16 @@ describe Bank do
         date: "10/01/2012"
       )
       bank.withdraw(1000, "10/01/2012")
+    end
+
+  end
+
+  describe '#print_statement' do
+  
+    it 'should create an instance of statement' do
+      expect(statement_class).to receive(:new).with(bank_log)
+
+      bank.print_statement(statement_class)
     end
 
   end
