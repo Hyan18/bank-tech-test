@@ -14,12 +14,12 @@ class Statement
   end
 
   def format_transactions
-    arr = @bank_log.history.reverse.map { |t|
+    formatted_transactions = @bank_log.history.reverse.map { |t|
       [t.date, format_amount(t.credit),
       format_amount(t.debit), format_amount(t.balance)]
       .join(" ||")
     }
-    arr.join("\n")
+    formatted_transactions.join("\n")
   end
 
   def header
