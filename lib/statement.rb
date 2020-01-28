@@ -15,7 +15,7 @@ class Statement
 
   def format_transactions
     formatted_transactions = @bank_log.history.map { |t|
-      [t.date, format_amount(t.credit),
+      [t.date.strftime("%d/%m/%Y"), format_amount(t.credit),
       format_amount(t.debit), format_amount(t.balance)]
       .join(" ||")
     }

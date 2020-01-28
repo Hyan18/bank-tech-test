@@ -25,9 +25,9 @@ describe Bank do
         type: :deposit,
         amount: 100,
         balance: 100,
-        date: "10/01/2012"
+        date: Date.parse("10/01/2012")
       )
-      bank.deposit(100, "10/01/2012")
+      bank.deposit(100, Date.parse("10/01/2012"))
     end
   end
 
@@ -55,9 +55,9 @@ describe Bank do
           type: :withdrawal,
           amount: 1000,
           balance: 1000,
-          date: "10/01/2012"
+          date: Date.parse("10/01/2012")
         )
-        bank.withdraw(1000, "10/01/2012")
+        bank.withdraw(1000, Date.parse("10/01/2012"))
       end
 
     end
