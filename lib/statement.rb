@@ -4,7 +4,7 @@ class Statement
   end
 
   def print
-    header + "\n" + formatted_transactions
+    header + "\n" + format_transactions
   end
 
   private
@@ -13,7 +13,7 @@ class Statement
     return ' ' + '%.2f' % amount if amount
   end
 
-  def formatted_transactions
+  def format_transactions
     arr = @bank_log.history.reverse.map { |t|
       [t.date, format_amount(t.credit),
       format_amount(t.debit), format_amount(t.balance)]
