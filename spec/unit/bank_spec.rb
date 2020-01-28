@@ -68,7 +68,7 @@ describe Bank do
       expect { bank.withdraw(100) }.to raise_error("Insufficient balance")
     end
 
-    it 'should raise an error when withdrawing £100 from a bank with 0 balance' do
+    it 'should raise an error when withdrawing £100 from a bank with minimum balance' do
       expect { bank.withdraw(100) }.to raise_error("Insufficient balance")
     end
 
