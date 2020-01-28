@@ -83,6 +83,10 @@ So I can keep track of my banking habits
 I would like to able to see my account statement
 ```
 
+# Model
+
+![Class Diagram](img/class_diagram.png)
+
 # Approach
 
 Features needed are: deposit, withdraw, print (bank statement)
