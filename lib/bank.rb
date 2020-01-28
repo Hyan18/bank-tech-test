@@ -5,8 +5,8 @@ class Bank
   MINIMUM_BALANCE = 0
 
   def initialize(bank_log = BankLog.new)
-    @balance = 0
     @bank_log = bank_log
+    @balance = 0
   end
 
   def deposit(amount, date = Time.now)

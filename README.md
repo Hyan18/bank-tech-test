@@ -46,33 +46,20 @@ rubocop # To run linter
 
 ```
 2.6.5 :001 > bank = Bank.new
- => #<Bank:0x00007fb6e7990fc0 @balance=0, @bank_log=#<BankLog:0x00007fb6e7990f98 @transaction_class=Transaction, @hist
-ory=[]>> 
-2.6.5 :002 > bank.withdraw(1000)
-Traceback (most recent call last):
-        5: from /Users/student/.rvm/rubies/ruby-2.6.5/bin/irb:23:in `<main>'
-        4: from /Users/student/.rvm/rubies/ruby-2.6.5/bin/irb:23:in `load'
-        3: from /Users/student/.rvm/rubies/ruby-2.6.5/lib/ruby/gems/2.6.0/gems/irb-1.0.0/exe/irb:11:in `<top (required
-)>'
-        2: from (irb):2
-        1: from /Users/student/Projects/Individual-challenges/bank-tech-test/lib/bank.rb:20:in `withdraw'
-BankError (Insufficient balance)
-2.6.5 :003 > bank.deposit(1000)
- => "Successfully deposited £1000.00" 
-2.6.5 :004 > bank.deposit(100.50)
- => "Successfully deposited £100.50" 
-2.6.5 :005 > bank.withdraw(500)
- => "Successfully withdrawn £500.00" 
-2.6.5 :006 > bank.withdraw(10.25)
- => "Successfully withdrawn £10.25" 
-2.6.5 :007 > bank.deposit(200)
- => "Successfully deposited £200.00" 
-2.6.5 :008 > bank.print_statement
+ => #<Bank:0x00007fbbe6a8d0c8 @bank_log=#<BankLog:0x00007fbbe6a8d0a0 @transaction_class=Transaction, @history=[]>, @balance=0> 
+2.6.5 :002 > bank.deposit(1000)
+ => 1000 
+2.6.5 :003 > bank.deposit(10.50)
+ => 1010.5 
+2.6.5 :004 > bank.withdraw(100)
+ => 910.5 
+2.6.5 :005 > bank.deposit(2000)
+ => 2910.5 
+2.6.5 :006 > bank.print_statement
 date || credit || debit || balance
-28/01/2020 || 200.00 || || 790.25
-28/01/2020 || || 10.25 || 590.25
-28/01/2020 || || 500.00 || 600.50
-28/01/2020 || 100.50 || || 1100.50
+28/01/2020 || 2000.00 || || 2910.50
+28/01/2020 || || 100.00 || 910.50
+28/01/2020 || 10.50 || || 1010.50
 28/01/2020 || 1000.00 || || 1000.00
 ```
 
