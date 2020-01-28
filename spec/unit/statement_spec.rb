@@ -10,7 +10,7 @@ describe Statement do
   let(:transaction_3) {
     double :transaction, date: "14/01/2012", credit: nil, debit: 500, balance: 2500
   }
-  let(:bank_log) { double :bank_log, history: [transaction_1, transaction_2, transaction_3] }
+  let(:bank_log) { double :bank_log, history: [transaction_3, transaction_2, transaction_1] }
   
   subject(:statement) { described_class.new(bank_log) }
 

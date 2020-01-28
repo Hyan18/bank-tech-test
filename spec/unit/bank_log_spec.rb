@@ -15,13 +15,14 @@ describe BankLog do
         balance: 100
       )
 
+      expect(bank_log.history).to receive(:unshift).with(transaction)
+
       bank_log.add(
         type: :deposit,
         amount: 100,
         balance: 100,
         date: "10/01/2012"
       )
-      expect(bank_log.history).to include(transaction)
     end
 
     it 'should create a withdrawal transaction and store it' do
@@ -32,13 +33,14 @@ describe BankLog do
         balance: 1000
       )
 
+      expect(bank_log.history).to receive(:unshift).with(transaction)
+
       bank_log.add(
         type: :withdrawal,
         amount: 1000,
         balance: 1000,
         date: "10/01/2012"
       )
-      expect(bank_log.history).to include(transaction)
     end
   end
 
