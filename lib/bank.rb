@@ -24,7 +24,7 @@ class Bank
   end
 
   def print_statement(statement_class = Statement)
-    statement_class.new(@bank_log).print
+    print(statement_class.new(@bank_log).print)
   end
 
 end
