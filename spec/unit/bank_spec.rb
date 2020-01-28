@@ -9,15 +9,15 @@ describe Bank do
 
   describe '#deposit' do
     it 'should deposit £100 into the bank' do
-      expect(bank.deposit(100)).to eq("Successfully deposited £100.00")
+      expect(bank.deposit(100)).to eq(100)
     end
 
     it 'should deposit £200 into the bank' do
-      expect(bank.deposit(200)).to eq("Successfully deposited £200.00")
+      expect(bank.deposit(200)).to eq(200)
     end
 
     it 'should deposit £10.50 into the bank' do
-      expect(bank.deposit(10.50)).to eq("Successfully deposited £10.50")
+      expect(bank.deposit(10.50)).to eq(10.5)
     end
 
     it 'should create an entry in the bank log' do
@@ -39,15 +39,15 @@ describe Bank do
       end
 
       it 'should withdraw £100' do
-        expect(bank.withdraw(100)).to eq("Successfully withdrawn £100.00")
+        expect(bank.withdraw(100)).to eq(1900)
       end
 
       it 'should withdraw £200' do
-        expect(bank.withdraw(200)).to eq("Successfully withdrawn £200.00")
+        expect(bank.withdraw(200)).to eq(1800)
       end
 
       it 'should withdraw £10.50' do
-        expect(bank.withdraw(10.50)).to eq("Successfully withdrawn £10.50")
+        expect(bank.withdraw(10.50)).to eq(1989.5)
       end
 
       it 'should create an entry in the bank log' do

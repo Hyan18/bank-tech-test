@@ -11,18 +11,18 @@ class Bank
 
   def deposit(amount, date = Time.now)
     @balance += amount
-
     @bank_log.add(type: :deposit, amount: amount, balance: @balance, date: date)
-    "Successfully deposited £#{'%.2f' % amount}"
+ 
+    @balance
   end
 
   def withdraw(amount, date = Time.now)
     raise BankError.new("Insufficient balance") if insufficient_funds?(amount)
 
     @balance -= amount
-
     @bank_log.add(type: :withdrawal, amount: amount, balance: @balance, date: date)
-    "Successfully withdrawn £#{'%.2f' % amount}"
+    
+    @balance
   end
 
   def print_statement(statement_class = Statement)

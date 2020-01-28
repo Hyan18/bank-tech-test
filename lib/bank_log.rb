@@ -10,24 +10,19 @@ class BankLog
 
   def add(type:, amount:, balance:, date:)
     credit_amount, debit_amount = amounts(type, amount)
-    
+
     @history.unshift(@transaction_class.new(
-        date: date,
-        credit: credit_amount,
-        debit: debit_amount,
-        balance: balance
+      date: date,
+      credit: credit_amount,
+      debit: debit_amount,
+      balance: balance
     ))
   end
 
   private
 
   def amounts(type, amount)
-    case type
-    when :deposit
-      return amount, nil
-    when :withdrawal
-      return nil, amount
-    end
+    type == :deposit ? [amount, nil] : [nil, amount]
   end
 
 end
